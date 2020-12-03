@@ -16,28 +16,29 @@ function wrapAdjective(style="*") {
     }
 }
 
+
 const Calculator = {
-  add: function(a,b) {
+  add: function(a, b){
       return a + b;
   },
-  subtract: function(a,b) {
+  subtract: function(a, b){
       return a - b;
   },
-  multiply: function(a,b) {
+  multiply: function(a, b){
       return a * b;
   },
-  divide: function(a,b) {
+  divide: function(a, b){
       return a / b;
   } 
 }
 
-let actionApplyer = function(start, ray) {
-    let a = start
-  
-    for (let i = 0; i < ray.length; i++ ){
-      a = ray[i](a)
-    }
-  
-    return a
-  }
 
+
+
+
+function actionApplyer(start, fns){
+    for (let i = 0; i < fns.length; i++){
+      start = fns[i](start);
+    }
+    return start;
+  };
